@@ -121,8 +121,8 @@ def writeNBT(loadDir: str, saveDir: str):
     """
     DataVersion = 2865
     size = [48,16,48]
-    PaletteGenerator = PaletteGenerator()
-    palette = PaletteGenerator.get_palette()
+    paletteGenerator = PaletteGenerator()
+    palette = paletteGenerator.get_palette()
     world = readWorldData(loadDir)
     blocks = []
     for a in world:
@@ -134,7 +134,6 @@ def writeNBT(loadDir: str, saveDir: str):
 
     nbtStructure = Structure({
         'DataVersion': DataVersion,
-        'author': 'none',
         'size': size,
         'palette': palette,
         'blocks': blocks,
